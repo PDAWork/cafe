@@ -1,6 +1,7 @@
 enum Pages {
   welcome,
   home,
+  itemMenu,
   error,
 }
 
@@ -10,6 +11,7 @@ extension AppPageExtension on Pages {
       Pages.welcome => '/',
       Pages.home => '/home',
       Pages.error => "/error",
+      Pages.itemMenu => 'item_menu',
     };
   }
 
@@ -18,6 +20,7 @@ extension AppPageExtension on Pages {
       Pages.welcome => 'WELCOME',
       Pages.home => 'HOME',
       Pages.error => 'ERROR',
+      Pages.itemMenu => "ITEMMENU",
     };
   }
 }

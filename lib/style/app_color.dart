@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 abstract class AppColor {
   // Основной текст и заголовки
   static const Color text1 = Color(0xFF35353A);

@@ -32,29 +32,5 @@ class CardCategory extends StatelessWidget {
             ),
       ),
     );
-    // return Container(
-    //   padding: const EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
-    //   decoration: BoxDecoration(
-    //     borderRadius: BorderRadius.circular(16),
-    //     color: isCheck ? AppColor.accentActive : AppColor.clear,
-    //   ),
-    //   child: InkWell(
-    //     borderRadius: BorderRadius.circular(16),
-    //     onTap: () {
-    //       context.read<CategoryMenuBloc>().add(
-    //             OnSelectCategoryMenuEvent(
-    //               name: name,
-    //               isCheck: !isCheck,
-    //             ),
-    //           );
-    //     },
-    //     child: Text(
-    //       name,
-    //       style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-    //             color: isCheck ? AppColor.base1 : AppColor.accentActive,
-    //           ),
-    //     ),
-    //   ),
-    // );
   }
 }

@@ -41,6 +41,9 @@ flutter:
 
 # flutter_native_splash-development.yaml
 flutter_native_splash:
+  web: false
+  android: true
+  ios: true 
   color: "#089082"
   image: assets/logo.png
 
@@ -48,4 +51,4 @@ flutter_native_splash:
     image: assets/logo.png
     icon_background_color: "#089082"
 
-  web: false
+  

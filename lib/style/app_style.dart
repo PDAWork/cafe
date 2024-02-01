@@ -12,6 +12,12 @@ ThemeData ligth = ThemeData(
   fontFamily: "Manrope",
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
+      textStyle: MaterialStatePropertyAll(
+        TextStyle(
+          fontSize: 14.spMin,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
       fixedSize: const MaterialStatePropertyAll(Size.fromHeight(43)),
       backgroundColor: const MaterialStatePropertyAll(AppColor.primary),
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
