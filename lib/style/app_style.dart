@@ -10,6 +10,9 @@ ThemeData ligth = ThemeData(
     backgroundColor: AppColor.base2,
   ),
   fontFamily: "Manrope",
+  textSelectionTheme: TextSelectionThemeData(
+    cursorColor: AppColor.primary,
+  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       textStyle: MaterialStatePropertyAll(
@@ -25,6 +28,26 @@ ThemeData ligth = ThemeData(
           borderRadius: BorderRadius.circular(8.0.r),
         ),
       ),
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    floatingLabelBehavior: FloatingLabelBehavior.never,
+    labelStyle: TextStyle(
+      fontSize: 13.spMin,
+      fontWeight: FontWeight.w400,
+    ),
+    contentPadding: EdgeInsets.symmetric(
+      vertical: 13.h,
+      horizontal: 16.w,
+    ),
+    constraints: BoxConstraints(minHeight: 44.h),
+    focusedBorder: OutlineInputBorder(
+      borderSide: const BorderSide(color: AppColor.primary),
+      borderRadius: BorderRadius.circular(8),
+    ),
+    border: OutlineInputBorder(
+      borderSide: const BorderSide(color: AppColor.primary),
+      borderRadius: BorderRadius.circular(8),
     ),
   ),
   primaryColor: AppColor.primary,
@@ -46,6 +69,11 @@ ThemeData ligth = ThemeData(
       fontSize: 11.spMin,
       fontWeight: FontWeight.w500,
       color: AppColor.text1,
+    ),
+    // Callout
+    labelMedium: TextStyle(
+      fontSize: 13.spMin,
+      fontWeight: FontWeight.w400,
     ),
   ),
 );

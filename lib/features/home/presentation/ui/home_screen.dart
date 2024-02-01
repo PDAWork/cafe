@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
     'Настройки'
   ];
 
-  final ValueNotifier<int> _value = ValueNotifier<int>(0);
+  final ValueNotifier<int> _value = ValueNotifier<int>(1);
 
   @override
   Widget build(BuildContext context) {

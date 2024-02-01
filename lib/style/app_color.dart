@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 abstract class AppColor {
   // Основной текст и заголовки
   static const Color text1 = Color(0xFF35353A);
@@ -6,6 +7,8 @@ abstract class AppColor {
   static const Color text2 = Color(0xFF5F6365);
   // Неактивные и дополнительные точки, второстепенная информация и помощники
   static const Color text3 = Color(0xFF96999A);
+  // Заголовки
+  static const Color text4 = Color(0xFFB2B7B9);
   // Текст ссылки и дополнительных кнопок
   static const Color link = Color(0xFF526ED3);
   // Положительные значения: доход, рост курса акций и т. д.
