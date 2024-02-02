@@ -1,12 +1,9 @@
 import 'package:cafe/style/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
-enum TextFieldType {
-  input,
-  date,
-  time,
-}
+enum TextFieldType { input, date, time, gost }
 
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
@@ -16,12 +13,14 @@ class CustomTextField extends StatefulWidget {
     this.maxLines = 1,
     this.minLines,
     this.expands = false,
+    this.enable,
   });
   final String label;
   final TextFieldType type;
   final int? maxLines;
   final int? minLines;
   final bool expands;
+  final bool? enable;
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
 }
@@ -71,26 +70,60 @@ class _CustomTextFieldState extends State<CustomTextField> {
           expands: widget.expands,
           controller: _controller,
           focusNode: _focus,
-          readOnly: widget.type != TextFieldType.input,
+          readOnly: widget.type != TextFieldType.input &&
+              widget.type != TextFieldType.gost,
+          enabled: widget.enable,
           style: Theme.of(context).textTheme.labelMedium,
+          keyboardType:
+              TextFieldType.gost == widget.type ? TextInputType.number : null,
+          maxLength: TextFieldType.gost == widget.type ? 2 : null,
           decoration: InputDecoration(
+            counterText: '',
             alignLabelWithHint: true,
             labelText: widget.label,
             suffixIcon: _isFocus || TextFieldType.input != widget.type
                 ? IconButton(
-                    onPressed: () {
+                    onPressed: () async {
                       switch (widget.type) {
                         case TextFieldType.input:
                           _controller.clear();
                           break;
                         case TextFieldType.date:
                           {
+                            final date = await showDatePicker(
+                              context: context,
+                              firstDate: DateTime.now(),
+                              lastDate: DateTime(2025),
+                            );
+                            if (date != null) {
+                              _controller.text =
+                                  DateFormat("dd.MM.yyyy").format(date);
+                              setState(() {
+                                _isFocus = true;
+                              });
+                            }
                             break;
                           }
                         case TextFieldType.time:
                           {
+                            final time = DateTime.now();
+                            final date = await showTimePicker(
+                              context: context,
+                              initialTime: TimeOfDay(
+                                hour: time.hour,
+                                minute: time.minute,
+                              ),
+                            );
+                            if (date != null) {
+                              _controller.text = date.format(context);
+                              setState(() {
+                                _isFocus = true;
+                              });
+                            }
                             break;
                           }
+                        case TextFieldType.gost:
+                          break;
                       }
                     },
                     icon: Icon(
@@ -98,6 +131,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                         TextFieldType.input => Icons.clear,
                         TextFieldType.date => Icons.calendar_today_outlined,
                         TextFieldType.time => Icons.access_time_outlined,
+                        TextFieldType.gost => null,
                       },
                     ),
                     color: AppColor.text4,

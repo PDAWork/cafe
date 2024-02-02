@@ -9,7 +9,6 @@ class ReservationPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.only(
         left: 16,
         right: 16,
@@ -33,12 +32,15 @@ class ReservationPages extends StatelessWidget {
           label: 'Время',
           type: TextFieldType.time,
         ),
-        const CustomTextField(label: 'Количество гостей'),
-         const CustomTextField(
-            label: 'Комментарий (не обязательно)',
-            minLines: 6,
-            maxLines: 6,
-          ),
+        const CustomTextField(
+          label: 'Количество гостей',
+          type: TextFieldType.gost,
+        ),
+        const CustomTextField(
+          label: 'Комментарий (не обязательно)',
+          minLines: 6,
+          maxLines: 6,
+        ),
         SizedBox(height: 20.h),
         Container(
           decoration: BoxDecoration(
