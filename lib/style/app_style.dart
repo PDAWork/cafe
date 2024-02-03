@@ -15,6 +15,7 @@ ThemeData ligth = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
+      elevation: const MaterialStatePropertyAll(0),
       textStyle: MaterialStatePropertyAll(
         TextStyle(
           fontSize: 14.spMin,
@@ -40,7 +41,7 @@ ThemeData ligth = ThemeData(
       vertical: 13.h,
       horizontal: 16.w,
     ),
-    constraints: BoxConstraints(minHeight: 44.h),
+    constraints: const BoxConstraints(minHeight: 44),
     focusedBorder: OutlineInputBorder(
       borderSide: const BorderSide(color: AppColor.primary),
       borderRadius: BorderRadius.circular(8),

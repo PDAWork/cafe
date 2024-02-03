@@ -1,5 +1,6 @@
 import 'package:cafe/features/home/presentation/pages/menu_pages.dart';
 import 'package:cafe/features/home/presentation/pages/reservation_pages.dart';
+import 'package:cafe/features/home/presentation/pages/settigns_pages.dart';
 import 'package:cafe/style/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     const MenuPages(),
     const ReservationPages(),
     const Center(child: Text('Корзина')),
-    const Center(child: Text('Настройки')),
+    const SettignsPages(),
   ];
   final List<String> titleAppBar = [
     'Меню',
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
     'Настройки'
   ];
 
-  final ValueNotifier<int> _value = ValueNotifier<int>(1);
+  final ValueNotifier<int> _value = ValueNotifier<int>(3);
 
   @override
   Widget build(BuildContext context) {

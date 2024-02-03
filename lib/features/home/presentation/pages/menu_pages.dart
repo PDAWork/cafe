@@ -56,7 +56,7 @@ class MenuPages extends StatelessWidget {
           sliver: SliverGrid.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisExtent: 242.h,
+              mainAxisExtent: 257.h,
               mainAxisSpacing: 20.h,
               crossAxisSpacing: 7.w,
             ),
@@ -88,15 +88,15 @@ class MenuPages extends StatelessWidget {
                       ),
                       child: Image.asset('assets/Image.png'),
                     ),
-                    const SizedBox(
-                      height: 8,
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Text(
                       'Салат с обжаренной свининой',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
-                    const SizedBox(
-                      height: 4,
+                    SizedBox(
+                      height: 4.h,
                     ),
                     Text(
                       '330 г',
@@ -105,13 +105,13 @@ class MenuPages extends StatelessWidget {
                           .bodySmall!
                           .copyWith(color: AppColor.text2),
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 8.h),
                     Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(
+                          padding: EdgeInsets.symmetric(
                             vertical: 4.5,
-                            horizontal: 12,
+                            horizontal: 12.h,
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
