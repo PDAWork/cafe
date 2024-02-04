@@ -1,4 +1,4 @@
-import 'package:cafe/dj/service.dart';
+import 'package:cafe/di/service.dart';
 import 'package:flutter/material.dart';
 import 'features/app.dart';
 

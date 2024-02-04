@@ -8,7 +8,7 @@ final class CategoryMenuInitial extends CategoryMenuState {}
 final class CategoryMenuLoad extends CategoryMenuState {}
 
 final class CategoryMenuSuccess extends CategoryMenuState {
-  final List<CategoryMenu> categoryList;
+  final List<CategoryEntity> categoryList;
 
   CategoryMenuSuccess({required this.categoryList});
 }

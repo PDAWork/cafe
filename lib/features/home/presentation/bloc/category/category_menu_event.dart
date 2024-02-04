@@ -10,4 +10,8 @@ final class OnSelectCategoryMenuEvent extends CategoryMenuEvent {
   OnSelectCategoryMenuEvent({required this.isCheck, required this.name});
 }
 
-final class InitCategoryMenuEvent extends CategoryMenuEvent {}
+final class InitCategoryMenuEvent extends CategoryMenuEvent {
+  final List<CategoryEntity> category;
+
+  InitCategoryMenuEvent({required this.category});
+}

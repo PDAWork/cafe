@@ -1,7 +1,6 @@
 import 'package:cafe/features/home/presentation/widget/custom_text_field.dart';
 import 'package:cafe/style/app_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -21,9 +20,9 @@ class ProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            CustomTextField(label: 'Имя'),
-            CustomTextField(label: 'Телефон'),
-            CustomTextField(label: 'Эл. почта'),
+            const CustomTextField(label: 'Имя'),
+            const CustomTextField(label: 'Телефон'),
+            const CustomTextField(label: 'Эл. почта'),
             const SizedBox(height: 20),
             Row(
               children: [

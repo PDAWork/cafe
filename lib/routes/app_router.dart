@@ -1,5 +1,6 @@
-import 'package:cafe/dj/service.dart';
-import 'package:cafe/features/home/presentation/bloc/category_menu_bloc.dart';
+import 'package:cafe/di/service.dart';
+import 'package:cafe/features/home/presentation/bloc/category/category_menu_bloc.dart';
+import 'package:cafe/features/home/presentation/bloc/home/home_bloc.dart';
 import 'package:cafe/features/home/presentation/ui/home_screen.dart';
 import 'package:cafe/features/home/presentation/ui/item_menu_screen.dart';
 import 'package:cafe/features/home/presentation/ui/profile_screen.dart';
@@ -24,8 +25,12 @@ class AppRouter {
           name: Pages.home.screenName,
           builder: (context, state) => BlocProvider(
                 create: (context) =>
-                    service<CategoryMenuBloc>()..add(InitCategoryMenuEvent()),
-                child: HomeScreen(),
+                    service<HomeBloc>()..add(HomeInitialEvent()),
+                child: BlocProvider(
+                  create: (context) =>
+                      service<CategoryMenuBloc>()..emit(CategoryMenuLoad()),
+                  child: HomeScreen(),
+                ),
               ),
           routes: [
             GoRoute(

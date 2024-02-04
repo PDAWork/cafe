@@ -1,8 +1,10 @@
-class CategoryMenu {
+class CategoryEntity {
+  final int id;
   final String name;
   bool isCheck;
 
-  CategoryMenu({
+  CategoryEntity({
+    required this.id,
     required this.name,
     this.isCheck = false,
   });
