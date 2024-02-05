@@ -1,7 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:cafe/di/service.dart';
 import 'package:cafe/features/home/domain/entity/category_entity.dart';
-import 'package:cafe/features/home/presentation/bloc/home/home_bloc.dart';
 import 'package:meta/meta.dart';
 
 part 'category_menu_event.dart';

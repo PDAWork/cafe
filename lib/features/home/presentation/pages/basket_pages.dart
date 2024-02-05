@@ -151,6 +151,12 @@ class BasketPages extends StatelessWidget {
                               .copyWith(color: AppColor.text2),
                         ),
                         SizedBox(height: 8.h),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            ButtonItem(cost: 100),
+                          ],
+                        )
                       ],
                     ),
                   );
