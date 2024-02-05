@@ -8,8 +8,8 @@ class ItemMenuEntity {
   final double cost;
   final String path;
   final CategoryEntity category;
-  ItemMenuEntity(
-     {
+  bool isCheckFilter;
+  ItemMenuEntity({
     required this.title,
     required this.description,
     required this.weight,
@@ -17,5 +17,6 @@ class ItemMenuEntity {
     required this.cost,
     required this.path,
     required this.category,
+    this.isCheckFilter = true,
   });
 }

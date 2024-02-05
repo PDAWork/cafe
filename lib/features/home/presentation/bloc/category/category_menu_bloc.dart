@@ -9,13 +9,16 @@ class CategoryMenuBloc extends Bloc<CategoryMenuEvent, CategoryMenuState> {
   CategoryMenuBloc() : super(CategoryMenuInitial()) {
     on<CategoryMenuEvent>((event, emit) {});
     on<OnSelectCategoryMenuEvent>((event, emit) {
-      final List<CategoryEntity> list = switch (state) {
-        CategoryMenuSuccess(:final categoryList) => categoryList,
-        _ => []
-      };
+      List<CategoryEntity> list = [];
+      if (state is CategoryMenuSuccess) {
+        list = (state as CategoryMenuSuccess).categoryList;
+      }
       emit(CategoryMenuLoad());
-      list.firstWhere((element) => element.name == event.name).isCheck =
-          event.isCheck;
+      list
+          .firstWhere(
+            (element) => element.name == event.name,
+          )
+          .isCheck = event.isCheck;
       emit(CategoryMenuSuccess(categoryList: list));
     });
     on<InitCategoryMenuEvent>((event, emit) {
