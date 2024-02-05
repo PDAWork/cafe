@@ -3,12 +3,14 @@ import 'package:cafe/features/home/data/repository/home_repository_impl.dart';
 import 'package:cafe/features/home/domain/repository/home_repository.dart';
 import 'package:cafe/features/home/presentation/bloc/category/category_menu_bloc.dart';
 import 'package:cafe/features/home/presentation/bloc/home/home_bloc.dart';
+import 'package:cafe/features/home/presentation/cubit/home_tab_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final service = GetIt.instance;
 
 Future<void> init() async {
   // StateManagment
+  service.registerFactory(() => HomeTabCubit());
   service.registerFactory(() => HomeBloc(service()));
   service.registerFactory(() => CategoryMenuBloc());
 

@@ -1,6 +1,7 @@
 import 'package:cafe/di/service.dart';
 import 'package:cafe/features/home/presentation/bloc/category/category_menu_bloc.dart';
 import 'package:cafe/features/home/presentation/bloc/home/home_bloc.dart';
+import 'package:cafe/features/home/presentation/cubit/home_tab_cubit.dart';
 import 'package:cafe/features/home/presentation/ui/home_screen.dart';
 import 'package:cafe/features/home/presentation/ui/item_menu_screen.dart';
 import 'package:cafe/features/home/presentation/ui/profile_screen.dart';
@@ -24,12 +25,15 @@ class AppRouter {
           path: Pages.home.screenPath,
           name: Pages.home.screenName,
           builder: (context, state) => BlocProvider(
-                create: (context) =>
-                    service<HomeBloc>()..add(HomeInitialEvent()),
+                create: (context) => service<HomeTabCubit>(),
                 child: BlocProvider(
                   create: (context) =>
-                      service<CategoryMenuBloc>()..emit(CategoryMenuLoad()),
-                  child: HomeScreen(),
+                      service<HomeBloc>()..add(HomeInitialEvent()),
+                  child: BlocProvider(
+                    create: (context) =>
+                        service<CategoryMenuBloc>()..emit(CategoryMenuLoad()),
+                    child: HomeScreen(),
+                  ),
                 ),
               ),
           routes: [
